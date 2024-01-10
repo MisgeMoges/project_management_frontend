@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="adduser.css">
+        <link rel="stylesheet" href="addproject.css">
         <title>Document</title>
+        <script src="dist/addProject.js" type="module"></script>
     </head>
     <body style="margin: 0px;">
         <div class="admincontainer">
@@ -42,49 +44,67 @@
                 <div class="editcontent">
                     <div class="editcontainer">
                         <div class="editwrapper">
-                            <h1 class="edittext">Add User</h1>
+                            <h1 class="edittext">Add Project</h1>
                             <div class="mb-3">
-                                <label for="firstname"
-                                    class="form-label eachlabel">First
-                                    Name</label>
+                                <label for="title"
+                                    class="form-label eachlabel">Project
+                                    Title</label>
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="firstname"
-                                    placeholder="Rediet" />
+                                    id="title"
+                                    placeholder="project" />
                             </div>
                             <div class="mb-3">
-                                <label for="lastname"
-                                    class="form-label eachlabel">Last
-                                    Name</label>
+                                <label for="descriptions"
+                                    class="form-label eachlabel">Description</label>
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="lastname"
-                                    placeholder="Rediet" />
+                                    id="description"
+                                    placeholder="Test descriptions" />
                             </div>
                             <div class="mb-3">
-                                <label for="lastname"
-                                    class="form-label eachlabel">Email</label>
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="lastname"
-                                    placeholder="Rediet@gmail.com" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="phonenumber"
-                                    class="form-label eachlabel">Phone
-                                    Number</label>
+                                <label for="manager"
+                                    class="form-label eachlabel">Manager</label>
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="phonenumber"
-                                    placeholder="097575748" />
+                                    id="manager"
+                                    placeholder="manager" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="startdate"
+                                    class="form-label eachlabel">Start Date</label>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="startdate"
+                                    placeholder="01-01-2024" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="endingdate"
+                                    class="form-label eachlabel">End
+                                    Date</label>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="endingdate"
+                                    placeholder="23-01-2024" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="employee"
+                                    class="form-label eachlabel">Employees</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="employee"
+                                    placeholder="redu" />
                             </div>
                             <div class="buttoncontainer">
                                 <button type="button"
-                                    class="btn submitbutton">Add User</button>
+                                    class="btn submitbutton">Add
+                                    Project</button>
                             </div>
                         </div>
                     </div>

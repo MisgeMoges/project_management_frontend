@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="edituser.css">
+        <link rel="stylesheet" href="adduser.css">
         <title>Document</title>
+        <script src="dist/addUser.js" type="module"></script>
     </head>
     <body style="margin: 0px;">
         <div class="admincontainer">
@@ -42,7 +44,7 @@
                 <div class="editcontent">
                     <div class="editcontainer">
                         <div class="editwrapper">
-                            <h1 class="edittext">Edit User</h1>
+                            <h1 class="edittext">Add User</h1>
                             <div class="mb-3">
                                 <label for="firstname"
                                     class="form-label eachlabel">First
@@ -65,27 +67,44 @@
                             </div>
                             <div class="mb-3">
                                 <label for="lastname"
-                                    class="form-label eachlabel">D-No</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="lastname"
-                                    placeholder="Rediet" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email"
-                                    class="form-label eachlabel">Phone
-                                    Number</label>
+                                    class="form-label eachlabel">Email</label>
                                 <input
                                     type="email"
                                     class="form-control"
                                     id="email"
-                                    placeholder="name@example.com" />
+                                    placeholder="Rediet@gmail.com" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="phonenumber"
+                                    class="form-label eachlabel">Phone
+                                    Number</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="phonenumber"
+                                    placeholder="097575748" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password"
+                                    class="form-label eachlabel">Password</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="password" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmpassword"
+                                    class="form-label eachlabel">Confirm Password</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="confirmpassword"
+                                    placeholder="confirmpassword" />
                             </div>
                             <div class="buttoncontainer">
                                 <button type="button"
-                                    class="btn submitbutton">Edit
-                                    Project</button>
+                                    class="btn submitbutton">Add User</button>
                             </div>
                         </div>
                     </div>
