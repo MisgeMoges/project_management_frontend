@@ -83,6 +83,8 @@ function populateTable(Users: User[]): void {
   Users.forEach((user) => {
     const row = document.createElement('tr');
     row.innerHTML = `
+
+       <td class="eachcol">${user._id}</td
       <td class="eachcol">${user.firstName}</td>
       <th scope="row">${user.lastName}</th>
       <td class="eachcol">${user.email}</td>
@@ -189,20 +191,20 @@ async function handleUpdateUser(
     // Implement the logic to update the User on the server
     await updateUser(userId, updatedUser);
     // Optionally, update the corresponding row in the table
-    // const rowToUpdate = document.querySelector(
-    //   `tr[data-user-id="${userId}"]`,
-    // );
-    // if (rowToUpdate) {
-    //   // Update the table row with the updated User data
-    //   const cells = rowToUpdate.querySelectorAll('.eachcol');
-    //   cells[0].textContent = updatedUser._id;
-    //   cells[1].textContent = updatedUser.title;
-    //   cells[2].textContent = updatedUser.description;
-    //   cells[3].textContent = updatedUser.manager;
-    //   cells[4].textContent = updatedUser.employees.join(', ');
-    //   cells[5].textContent = updatedUser.startDate;
-    //   cells[6].textContent = updatedUser.endDate;
-    // }
+    const rowToUpdate = document.querySelector(
+      `tr[data-user-id="${userId}"]`,
+    );
+    if (rowToUpdate) {
+      // Update the table row with the updated User data
+      const cells = rowToUpdate.querySelectorAll('.eachcol');
+      cells[0].textContent = updatedUser._id;
+      cells[1].textContent = updatedUser.firstName;
+      cells[2].textContent = updatedUser.lastName;
+      cells[3].textContent = updatedUser.email;
+      cells[4].textContent = updatedUser.phoneNumber;
+      cells[5].textContent = updatedUser.role;
+      
+    }
 
     console.log('User updated successfully!');
   } catch (error) {

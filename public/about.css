@@ -3,23 +3,27 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 .sectionone {
   overflow-x: hidden;
-  background-color: #f3f8ff;
+  background-color: white;
 }
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  background: #d9d9d9;
+  background: white;
   padding: 0px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+  border-bottom: 1px solid #112846;
+  color: #112846;
 }
 .left {
+  color: #112846;
 }
 .middle {
   display: flex;
@@ -35,7 +39,6 @@
   text-decoration: none;
   color: #000000;
 }
-
 .sectiontwo {
   height: 80vh;
   width: 100vw;

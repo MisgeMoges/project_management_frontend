@@ -1,7 +1,5 @@
-export {};
-
 interface Project {
-  _id:string;
+  _id: string;
   title: string;
   description: string;
   manager: string;
@@ -92,7 +90,7 @@ function populateTable(projects: Project[]): void {
   projects.forEach((project) => {
     const row = document.createElement('tr');
     row.innerHTML = `
-  
+      <td class="eachcol">${project._id}</td>
       <th scope="row">${project.title}</th>
       <td class="eachcol">${project.description}</td>
       <td class="eachcol">${project.manager}</td>

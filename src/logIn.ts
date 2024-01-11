@@ -6,10 +6,10 @@ interface SigninUserData {
   password: string;
 }
 
-interface AuthResponse {
-  token: string;
-  role: string;
-}
+// interface AuthResponse {
+//   token: string;
+//   role: string;
+// }
 
 async function loginUser(signInUser: SigninUserData): Promise<void> {
   try {
@@ -23,12 +23,12 @@ async function loginUser(signInUser: SigninUserData): Promise<void> {
     });
 
     if (response.ok) {
-      const data: AuthResponse = await response.json();
+      const data= await response.json();
 
-      // Store user token and role in local storage
-      console.log(data.role)
-      localStorage.setItem('userToken', data.token);
-      localStorage.setItem('userRole', data.role);
+      // // Store user token and role in local storage
+      // console.log(data.role)
+      // localStorage.setItem('userToken', data.token);
+      // localStorage.setItem('userRole', data.role);
 
       console.log('User logged in successfully!');
       if (data.role === 'admin') {
