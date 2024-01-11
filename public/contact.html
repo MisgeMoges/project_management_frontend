@@ -17,7 +17,7 @@
         <script src="dist/contact.js" type="module"></script>
         <!-- Add this script in the head section of your HTML file -->
 
-<script>
+        <script>
       // Modify the script in your projects HTML file
       document.addEventListener('DOMContentLoaded', function () {
         const isAuthenticated = localStorage.getItem('userToken');
@@ -53,46 +53,89 @@
                     <div class="links">
                         <a href="contact.html"> Contact Us </a>
                     </div>
-                    <div class="links" >
-                        <a href="projects.html" id = "projects_link"> Projects </a>
+                    <div class="links">
+                        <a href="projects.html" id="projects_link"> Projects
+                        </a>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="links" id = "login_link">
+                    <div class="links" id="login_link">
                         <a href="login.html"> Login </a>
                     </div>
                 </div>
             </div>
-         
-        <section class="sectionthree" id="contactus">
-            <div class="innercontact">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Rediet" />
+
+            <section class="sectionthree" id="contactus">
+                <div class="innercontact">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Rediet" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="name@example.com" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedback"
+                            class="form-label">Feedback</label>
+                        <textarea class="form-control" id="feedback"
+                            rows="3"></textarea>
+                    </div>
+                    <div class="buttoncontainer">
+                        <button type="button"
+                            class="btn submitbutton">Submit</button>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="name@example.com" />
+
+            </section>
+            <div class="footer">
+                <div class="footerleft">
+                    <h3>Contact us</h3>
+                    <div>
+                        <p>Face book</p>
+                    </div>
+                    <div>
+                        <p>Linkden</p>
+                    </div>
+                    <div>
+                        <p>Instagram</p>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="feedback" class="form-label">Feedback</label>
-                    <textarea class="form-control" id="feedback"
-                        rows="3"></textarea>
+                <div class="footermiddle">
+                    <h3>Services</h3>
+                    <div>
+                        <p>Make project from scratch</p>
+                    </div>
+                    <div>
+                        <p>Consult on project</p>
+                    </div>
+                    <div>
+                        <p>Review projects</p>
+                    </div>
                 </div>
-                <div class="buttoncontainer">
-                    <button type="button"
-                        class="btn submitbutton">Submit</button>
+                <div class="footerright">
+                    <h3>Address</h3>
+                    <div class="eachelementfooter">
+                        <p>City</p>
+                        <p>Addis Ababa</p>
+                    </div>
+                    <div class="eachelementfooter">
+                        <p>Woreda</p>
+                        <p>Arada</p>
+                    </div>
+                    <div class="eachelementfooter">
+                        <p>Street</p>
+                        <p>5 kilo</p>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-    </body>
-</html>
+        </body>
+    </html>
