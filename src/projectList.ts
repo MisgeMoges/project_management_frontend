@@ -10,7 +10,16 @@ interface Project {
 
 async function fetchProjects(): Promise<Project[]> {
   try {
-    const response = await fetch('http://localhost:3000/projects');
+    const userToken = localStorage.getItem('userToken');
+   const headers = new Headers();
+
+   if (userToken) {
+     headers.append('Authorization', userToken);
+   }
+
+    const response = await fetch('http://localhost:3000/projects',
+     {headers: headers}
+    );
     if (!response.ok) {
       throw new Error(`Failed to fetch projects: ${response.statusText}`);
     }
@@ -37,12 +46,18 @@ async function fetchProjectById(projectId: string): Promise<Project> {
 
 async function deleteProject(projectId: string): Promise<void> {
   try {
-    const response = await fetch(
-      `http://localhost:3000/projects/${projectId}`,
-      {
-        method: 'DELETE',
-      },
-    );
+   const userToken = localStorage.getItem('userToken');
+   const headers = new Headers();
+
+   if (userToken) {
+     headers.append('Authorization', userToken);
+   }
+
+   const response = await fetch(`http://localhost:3000/projects/${projectId}`, {
+     method: 'DELETE',
+     headers: headers,
+   });
+
 
     if (!response.ok) {
       throw new Error(`Failed to delete project: ${response.statusText}`);
@@ -60,13 +75,20 @@ async function updateProject(
   updatedProject: Project,
 ): Promise<void> {
   try {
+     const userToken = localStorage.getItem('userToken');
+     const headers = new Headers({
+       'Content-Type': 'application/json',
+     });
+
+     if (userToken !== null) {
+       headers.append('Authorization', userToken);
+     }
+
     const response = await fetch(
       `http://localhost:3000/projects/${projectId}`,
       {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: headers,
         body: JSON.stringify(updatedProject),
       },
     );

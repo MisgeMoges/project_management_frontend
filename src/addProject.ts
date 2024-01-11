@@ -11,11 +11,17 @@ interface ProjectData {
 
 async function addProject(projectData: ProjectData): Promise<void> {
   try {
+    const userToken = localStorage.getItem('userToken');
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+
+    if (userToken !== null) {
+      headers.append('Authorization', userToken);
+    }
     const response = await fetch('http://localhost:3000/projects', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify(projectData),
     });
 

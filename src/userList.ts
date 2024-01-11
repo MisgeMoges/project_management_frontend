@@ -12,7 +12,15 @@ export {};
 
 async function fetchUsers(): Promise<User[]> {
   try {
-    const response = await fetch('http://localhost:3000/users');
+    const userToken = localStorage.getItem('userToken');
+    const headers = new Headers();
+
+    if (userToken) {
+      headers.append('Authorization', userToken);
+    }
+    const response = await fetch('http://localhost:3000/users', {
+      headers: headers,
+    });
     if (!response.ok) {
       throw new Error(`Failed to fetch Users: ${response.statusText}`);
     }
@@ -39,8 +47,15 @@ async function fetchUserById(userId: string): Promise<User> {
 
 async function deleteUser(userId: string): Promise<void> {
   try {
+    const userToken = localStorage.getItem('userToken');
+    const headers = new Headers();
+
+    if (userToken) {
+      headers.append('Authorization', userToken);
+    }
     const response = await fetch(`http://localhost:3000/Users/${userId}`, {
       method: 'DELETE',
+      headers: headers,
     });
 
     if (!response.ok) {
@@ -56,11 +71,17 @@ async function deleteUser(userId: string): Promise<void> {
 
 async function updateUser(userId: string, updatedUser: User): Promise<void> {
   try {
+    const userToken = localStorage.getItem('userToken');
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+
+    if (userToken !== null) {
+      headers.append('Authorization', userToken);
+    }
     const response = await fetch(`http://localhost:3000/Users/${userId}`, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify(updatedUser),
     });
 
@@ -173,7 +194,7 @@ async function handleEditButtonClick(user: User): Promise<void> {
 // Helper function to extract form data
 function getFormData(form: HTMLFormElement): User {
   return {
-    _id:(form.querySelector("#id")as HTMLInputElement).value,
+    _id: (form.querySelector('#id') as HTMLInputElement).value,
     firstName: (form.querySelector('#firstname') as HTMLInputElement).value,
     lastName: (form.querySelector('#lastname') as HTMLInputElement).value,
     email: (form.querySelector('#email') as HTMLInputElement).value,
@@ -191,9 +212,7 @@ async function handleUpdateUser(
     // Implement the logic to update the User on the server
     await updateUser(userId, updatedUser);
     // Optionally, update the corresponding row in the table
-    const rowToUpdate = document.querySelector(
-      `tr[data-user-id="${userId}"]`,
-    );
+    const rowToUpdate = document.querySelector(`tr[data-user-id="${userId}"]`);
     if (rowToUpdate) {
       // Update the table row with the updated User data
       const cells = rowToUpdate.querySelectorAll('.eachcol');
@@ -203,7 +222,6 @@ async function handleUpdateUser(
       cells[3].textContent = updatedUser.email;
       cells[4].textContent = updatedUser.phoneNumber;
       cells[5].textContent = updatedUser.role;
-      
     }
 
     console.log('User updated successfully!');

@@ -49,8 +49,9 @@ async function signUpUser(user: UserData): Promise<void> {
 }
 
 // Function to get input values and call signUpUser
-function handleSignUp(): void {
+function handleSignUp(event: Event): void {
   // Get input values from the form
+  event.preventDefault();
   const firstNameInput = document.getElementById(
     'firstname',
   ) as HTMLInputElement;
