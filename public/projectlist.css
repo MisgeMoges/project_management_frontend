@@ -1,28 +1,35 @@
 .admincontainer {
   margin: 0px;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  background: #d9d9d9;
+  background: white;
   padding: 0px 20px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #112846;
+}
+.left h1 {
+  color: #112846;
+}
+.middle {
+  color: #112846;
 }
 .home {
   display: flex;
 }
 .sidebar {
   flex: 1;
-  background-color: #f3f8ff;
+  background-color: white;
   height: calc(100vh - 60px);
   padding: 30px 15px;
-  border-right: 2px solid black;
+  border-right: 1px solid #112846;
 }
 .content {
   flex: 5;
-  background-color: #f3f8ff;
+  background-color: white;
   height: calc(100vh - 60px);
 }
 .table {
@@ -33,9 +40,12 @@
   margin-bottom: 10px;
   font-size: 24px;
 }
+.eachelemnt a {
+  color: #112846;
+}
 .eachcol {
-  width: 20%;
   text-align: center;
+  font-size: 18px;
 }
 .tablebody {
   display: flex;
